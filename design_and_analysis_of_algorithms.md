@@ -85,6 +85,7 @@ for j=2 to length(A)
 * __Termination__: When the algorithm terminates invariant gives us the property that the algorithm __is correct__
 ### Operation cost
 The following costs are the individual cost of every line of code previously written
+
 row|cost|times
 ---|---|---
 1 |c<sub>1</sub>| _n_
