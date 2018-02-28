@@ -1,1 +1,1 @@
-Algorithmic Methods and Machine Learning Notes
+# Algorithmic Methods and Machine Learning Notes
