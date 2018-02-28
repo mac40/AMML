@@ -69,11 +69,11 @@ step|1|2|3|4|5|6
 Insertion-sort(A)
 ```javascript
 for j=2 to length(A)
-    do key=A[j]
+    key=A[j]
     //insert A[j] into the sorted sequence A[1...j-1]
     i=j-1
     while i>0 and A[i]>key
-        do A[i+1]=A[i]
+        A[i+1]=A[i]
         i=i-1
     A[i+1]=key
 ```
@@ -117,3 +117,47 @@ c<sub>5</sub>Σ<sub>j=2->n</sub>t<sub>j</sub> with t<sub>j</sub>=j for j=2,...,n
 c<sub>6</sub>Σ<sub>j=2->n</sub>(t<sub>j</sub>-1)=c<sub>7</sub>Σ<sub>j=2->n</sub>(t<sub>j</sub>-1)=(n(n-1))/2
 
 __T(n)=3/2n<sup>2</sup>+5/2n-4__
+
+# Selection Sort
+
+Comparing every element starting from the left-most with every right element and exchange it with the lowest one
+
+step|1|2|3|4|5|6
+---|---|---|---|---|---|---
+1|__5__|2|4|6|1|3
+2|1|__2__|4|6|5|3
+3|1|2|__4__|6|5|3
+4|1|2|3|__6__|5|4
+5|1|2|3|4|__5__|6
+6|__1__|__2__|__3__|__4__|__5__|__6__
+
+## Steps
+
+```javascript
+n=len(A)
+for j=1 to n-1:
+    smallest=j
+    for i=j+1 to n:
+        if A[i]<A[smallest]:
+            smallest=i
+    exchange A[j] with A[smallest]
+```
+
+### Operation cost
+The following costs are the individual cost of every line of code previously written
+
+row|cost|times
+---|---|---
+1 |c<sub>1</sub>|1
+2 |c<sub>2</sub>|n
+3 |c<sub>3</sub>|n-1
+4 |c<sub>4</sub>|Σ<sub>j=1->n-1</sub>t<sub>j</sub>
+5 |c<sub>5</sub>|Σ<sub>j</sub>(t<sub>j</sub>-1)
+6 |c<sub>6</sub>|Σ<sub>j</sub>(t<sub>j</sub>-1)
+7 |c<sub>7</sub>|n-1
+
+### Best case scenario
+
+Best case scenario = worst case scenario in terms of running time
+
+T(n)=an<sup>2</sup>+bn+c
