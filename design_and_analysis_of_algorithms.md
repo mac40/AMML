@@ -160,4 +160,4 @@ row|cost|times
 
 Best case scenario = worst case scenario in terms of running time
 
-T(n)=an<sup>2</sup>+bn+c
+__T(n)=an<sup>2</sup>+bn+c__
