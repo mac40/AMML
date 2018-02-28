@@ -64,6 +64,7 @@ step|1|2|3|4|5|6
 3|2|4|5|6|__1__|3
 4|1|2|4|5|6|__3__
 5|__1__|__2__|__3__|__4__|__5__|__6__
+
 ## Pseudo-code
 Insertion-sort(A)
 ```javascript
@@ -83,6 +84,7 @@ for j=2 to length(A)
     * e.g. in insertion-sort all elements before _j_ is already ordered (_e.g. j=2 A[1...j-1]=A[1]=> ordered_)
 * __Maintenance__: if it is true _before_ an iteration, it remains true _before_ the start of the next iteration
 * __Termination__: When the algorithm terminates invariant gives us the property that the algorithm __is correct__
+
 ### Operation cost
 The following costs are the individual cost of every line of code previously written
 
@@ -96,3 +98,22 @@ row|cost|times
 6 |c<sub>6</sub>| _Σ<sub>j=2->n</sub> t<sub>j</sub>-1_
 7 |c<sub>7</sub>| _Σ<sub>j=2->n</sub> t<sub>j</sub>-1_
 8 |c<sub>8</sub>| _n-1_
+
+### Best case Analysis
+
+T(n) = c<sub>1</sub>n+c<sub>2</sub>(n-1)+c<sub>4</sub>(n-1)+c<sub>5</sub>(n-1)+c<sub>8</sub>(n-1)
+
+in order to analize the algorithm ignoring other variables we assume all costs equal to 1
+
+__T(n) = 5n-4__
+
+### Worst case Analysis
+
+T(n)=c<sub>1</sub>n+c<sub>2</sub>(n-1)+c<sub>4</sub>(n-1)+c<sub>5</sub>Σ<sub>j=2->n</sub>t<sub>j</sub>
++c<sub>6</sub>Σ<sub>j=2->n</sub>(t<sub>j</sub>-1)+c<sub>7</sub>Σ<sub>j=2->n</sub>(t<sub>j</sub>-1)+c<sub>8</sub>(n-1)
+
+c<sub>5</sub>Σ<sub>j=2->n</sub>t<sub>j</sub> with t<sub>j</sub>=j for j=2,...,n => Σ<sub>j=2->n</sub>j=(n(n+1))/2-1
+
+c<sub>6</sub>Σ<sub>j=2->n</sub>(t<sub>j</sub>-1)=c<sub>7</sub>Σ<sub>j=2->n</sub>(t<sub>j</sub>-1)=(n(n-1))/2
+
+__T(n)=3/2n<sup>2</sup>+5/2n-4__
