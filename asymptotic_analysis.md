@@ -15,3 +15,28 @@ O(g(n)) = { f(n) : there exist positive constants c and n<sub>0</sub> such that 
 Θ(g(n)) is subset of O(g(n))
 
 ![big oh](immagini/Screenshot_2.png)
+
+## Prefix Averages calculation
+
+X[1÷n] calculate A[i] = (Σ<sub>j=1->i</sub>X[j])/i
+
+### Prefix averages(X)
+```javascript
+n=X.length
+A=[]
+A.len()=n
+for i=1 to n
+    a=0
+    for j=1 to i
+        a=a+X[i]
+    A[i]=a/i
+return A
+```
+
+line|cost
+---|---
+2|O(n)
+4|O(n)
+6|O(n<sup>2</sup>)
+
+T(n)=O(n)+O(n)+__O(n<sup>2</sup>)__
