@@ -40,3 +40,36 @@ line|cost
 6|O(n<sup>2</sup>)
 
 T(n)=O(n)+O(n)+__O(n<sup>2</sup>)__
+
+## Prefix Averages 2
+
+```javascript
+n=len(x)
+A=[]
+A.len()=n
+s=0
+for i=1 to n:
+    s=s+X[i]
+    A[i]=S/i
+return A
+```
+
+line|cost
+---|---
+2|O(n)
+4|O(n)
+5|O(n)
+8|O(n)
+
+T(n)=__O(n)__+O(n)+O(n)+O(n)
+
+# Complexities
+
+name|order of growth|example
+---:|---:|---:
+constant|1|a=b+c
+logarithmic|log(n)|binary search
+linear|n|prefix-averages-2
+quadratic|n<sup>2</sup>|2 nested for loops
+cubic|n<sup>3</sup>|3 nested for loops
+exponential|2<sup>n</sup>|hamiltonian path in a graph
