@@ -3,7 +3,7 @@
 ## Divide et Impera
 
 * __Divide__ the problem into smaller sub-problems
-* __Conquer__ the sub-problems by solving them one at a time
+* __Impera__ the sub-problems by solving them one at a time
 * __Combine__ the solutions of the subproblems into the solution for the general problem
 
 ### Iterative vs Recursive
@@ -49,3 +49,66 @@ When an algorithm calls itself (nested call):
 
 ![Merge-sort](immagini/Screenshot_3.png)
 
+```javascript
+//A = array
+//p = first element
+//r = last element
+mergesort(A,p,r)
+    if(p<r):
+        q=(p+r)/2 // ground
+        mergesort(A,p,q)
+        mergesort(A,q+1,r)
+        merge(A,p,q,r)
+```
+
+```javascript
+merge(A,p,q,r)
+    n1=q-p+1
+    n2=r-q
+    L=[]
+    R=[]
+    L.len()=n1
+    R.len()=n2
+    for i=1 to n1:
+        L[i]=A[p+i-1]
+    for j=1 to n2:
+        R[j]=A[q+j]
+    L[n1+1]=inf
+    R[n2+1]=inf
+    i=1
+    j=1
+    for k=p to r:
+        if L[i]<=R[j]:
+            A[k]=L[i]
+            i++
+        else:
+            A[k]=R[j]
+            j++
+```
+
+T(n) = 
+
+* Θ(1) if n<=c
+* aT(n/b)+D(n)+C(n) otherwise
+    * a = number of subproblems
+    * n/b = size of subproblem
+    * n = power of 2
+
+2T(n/2)+Θ(1)+Θ(n)
+
+T(n)=2T(n/2)+Θ(n)=2T(n/2)+cn
+
+\# of levels = log(n)+1
+
+__proof by induction__
+
+* __Base__: n=1 log(1)=0
+* __ind__:
+
+    let's assume than n=2<sup>i</sup>
+    
+    ok...
+
+&#9633;
+
+T(n)=cn*log(n)+cn
