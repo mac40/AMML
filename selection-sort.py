@@ -8,8 +8,6 @@ while j<n-1:
         if A[i]<A[smallest]:
             smallest=i
         i=i+1
-    temp=A[j]
-    A[j]=A[smallest]
-    A[smallest]=temp
+    A[j],A[smallest] = A[smallest],A[j]
     j=j+1
 print(A)
