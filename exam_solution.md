@@ -45,7 +45,7 @@ __a__|0|1↑|2↖|3↖|3←|3←
 
 4. True
 
-5. False (Comparison sorts require at least O(nlogn))
+5. True (Heapsort to the 3rd element O(3logn))
 
 ## Exercise 5
 
